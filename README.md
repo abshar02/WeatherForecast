@@ -1,8 +1,8 @@
-#Android technical test using OpenWeatherMap
+# Android technical test using OpenWeatherMap
 
 Android app displaying the 5 day weather forecast for London using the [OpenWeatherMap API sample data](http://openweathermap.org/forecast5).
 
-##Technologies used:
+## Technologies used:
 * Android SDK
 * Kotlin
 * Data Binding
@@ -18,7 +18,7 @@ Android app displaying the 5 day weather forecast for London using the [OpenWeat
 * [Timber](https://github.com/JakeWharton/timber)
 
 
-##Build instructions:
+## Build instructions:
 * Clone the repository
 * From Android Studio:
     * Open project from the folder you cloned it into.
@@ -30,7 +30,7 @@ Android app displaying the 5 day weather forecast for London using the [OpenWeat
         `gradlew installDebug`
 
 
-##Todo:
+## Todo:
 * Improve general layout.
 * Use day of week instead of full date
 * Either add a detail view or expandable card to add additional weather information.
