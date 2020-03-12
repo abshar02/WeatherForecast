@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="android.view.View" />
+        <variable
+            name="viewModel"
+            type="co.uk.thewirelessguy.weatherforecast.models.Forecast.ListEntries" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_small"
+        android:layout_marginBottom="@dimen/margin_small">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/weatherWrapper"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_small"
+            android:layout_marginEnd="@dimen/margin_small"
+            android:layout_marginTop="@dimen/margin_small"
+            android:layout_marginBottom="@dimen/margin_normal">
+            
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/weatherIcon"
+                android:contentDescription="@{viewModel.weather.get(0).description}"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                app:imageUrl="@{viewModel.weather.get(0).iconUrl}"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/weatherDescription"
+                style="@style/additionalWeatherText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@{viewModel.weather.get(0).main}"
+                android:textAlignment="viewStart"
+                android:maxLines="1"
+                android:layout_marginStart="@dimen/margin_normal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/weatherIcon"
+                tools:text="Clear" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/temp"
+                style="@style/temp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@{@string/degrees(viewModel.main.tempInCelsius)}"
+                android:textAlignment="viewStart"
+                android:maxLines="1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="20" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/humidity"
+                style="@style/additionalWeatherText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:text="@{@string/humidity(Integer.toString(viewModel.main.humidity))}"
+                android:textAlignment="viewEnd"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/temp"
+                tools:text="0.0%" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/pressure"
+                style="@style/additionalWeatherText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:text="@{@string/pressure(Double.toString(viewModel.main.pressure))}"
+                android:textAlignment="viewEnd"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/humidity"
+                tools:text="0.0" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/date"
+                style="@style/additionalWeatherText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:text="@{viewModel.dateTime}"
+                android:textAlignment="viewEnd"
+                android:layout_marginTop="@dimen/margin_small"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/pressure"
+                tools:text="1/1/2020" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</layout>

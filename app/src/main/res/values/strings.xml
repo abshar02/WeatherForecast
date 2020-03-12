@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Weather Forecast</string>
+    <string name="menu_weather_list">Weather List</string>
+    <string name="empty_view_loading">Loading…</string>
+
+    <string name="degrees">%s\u00B0</string>
+    <string name="celsius">%s C\u00B0</string>
+    <string name="humidity">Humidity: %s</string>
+    <string name="pressure">Pressure: %s</string>
+</resources>
