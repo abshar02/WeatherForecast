@@ -9,7 +9,7 @@ Android app displaying the 5 day weather forecast for London using the [OpenWeat
 * [Retrofit](https://github.com/square/retrofit)
 * [Moshi](https://github.com/square/moshi)
 * Coroutines
-* Live Data
+* LiveData
 * ViewModels
 * Repository Pattern
 * Dependency Injection using [Koin](https://github.com/InsertKoinIO/koin)
